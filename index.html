@@ -1,114 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - Termite Habit Tracker</title>
     <style>
+        :root {
+            --primary: #1a73e8;
+            --text: #202124;
+            --text-secondary: #5f6368;
+            --bg: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --border: #dadce0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #8ab4f8;
+                --text: #e8eaed;
+                --text-secondary: #9aa0a6;
+                --bg: #202124;
+                --bg-secondary: #303134;
+                --border: #5f6368;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            padding: 20px;
+        }
+
+        .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
+            padding: 40px 20px;
         }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
+
         h1 {
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: var(--text);
         }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+
         h2 {
-            margin-top: 30px;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 5px;
+            font-size: 1.25rem;
+            margin: 32px 0 16px;
+            color: var(--text);
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
         }
+
+        h3 {
+            font-size: 1.1rem;
+            margin: 20px 0 12px;
+            color: var(--text);
+        }
+
         p {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
+            color: var(--text);
         }
-        ul {
-            margin-bottom: 15px;
-            padding-left: 20px;
+
+        ul,
+        ol {
+            margin: 0 0 16px 24px;
         }
+
         li {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            color: var(--text);
         }
-        .container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
         }
-        .contact-info {
-            background-color: #e8f4f8;
-            padding: 15px;
-            border-left: 4px solid #3498db;
-            border-radius: 4px;
-            margin-top: 20px;
+
+        a:hover {
+            text-decoration: underline;
         }
-        .date {
-            color: #7f8c8d;
-            font-style: italic;
-            margin-bottom: 30px;
+
+        .highlight-box {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .contact-box {
+            background: var(--bg-secondary);
+            padding: 24px;
+            border-radius: 12px;
+            margin-top: 24px;
+        }
+
+        .contact-box p {
+            margin-bottom: 8px;
+        }
+
+        .contact-box strong {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background: var(--bg-secondary);
+            text-decoration: none;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            background: var(--bg-secondary);
+            font-weight: 600;
+        }
+
+        .badge-trader {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 6px;
+            background: #e8f0fe;
+            color: #1a73e8;
+            margin-bottom: 12px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .badge-trader {
+                background: #1e3a5f;
+                color: #8ab4f8;
+            }
+        }
+
+        footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
+        <nav class="nav-links">
+            <a href="https://sumitkahar992.github.io/termite_habit_termsofuse/" class="active">Terms of Service</a>
+            <a href="https://sumitkahar992.github.io/termite_habit_privacy/">Privacy Policy</a>
+        </nav>
+
         <h1>Terms of Service</h1>
-        <p class="date">Last Updated: March 19, 2026</p>
+        <p class="last-updated">Last Updated: November 16, 2026</p>
 
-        <h2>1. Acceptance of Terms</h2>
-        <p>By downloading, accessing, or using the Termite Habit Tracker application ("the App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.</p>
-
-        <h2>2. Description of Service</h2>
-        <p>Termite Habit Tracker is a mobile application designed to help users build and maintain positive routines. Features include habit creation, tracking, statistics, widgets, and offline data backups.</p>
-
-        <h2>3. Local Storage and Data Responsibility</h2>
-        <p>The App operates entirely offline properties. Your data, including habit check-ins and preferences, is stored locally on your device.</p>
-        <ul>
-            <li><strong>No Cloud Backup:</strong> We do not store your data on our servers.</li>
-            <li><strong>User Responsibility:</strong> You are solely responsible for securing your device and creating manual backups using the built-in backup features (JSON export). We are not liable for any data loss resulting from device failure, app uninstallation, or lost backup files.</li>
-        </ul>
-
-        <h2>4. Subscriptions and Purchases</h2>
-        <p>The App offers a free version with optional premium features through in-app purchases and auto-renewable subscriptions.</p>
-        <ul>
-            <li><strong>Billing Processing:</strong> All payments are processed securely through the Google Play Store and managed via RevenueCat.</li>
-            <li><strong>Cancellations:</strong> You can manage and cancel your subscriptions directly from your Google Play Store account settings.</li>
-            <li><strong>Refunds:</strong> Refund requests must be directed to Google Play Support according to their refund policies.</li>
-        </ul>
-
-        <h2>5. User Conduct</h2>
-        <p>When using the App, you agree not to:</p>
-        <ul>
-            <li>Use the App for any illegal or unauthorized purpose.</li>
-            <li>Attempt to reverse engineer, decompile, or hack the App's source code or in-app purchase systems.</li>
-            <li>Interfere with or disrupt the security features of the App.</li>
-        </ul>
-
-        <h2>6. Third-Party Services</h2>
-        <p>The App integrates third-party tools such as Google Play Services, AdMob for advertising, Crashlytics for analytics, and RevenueCat for subscription management. Your interactions with these services are governed by their respective Terms of Service and Privacy Policies.</p>
-
-        <h2>7. Disclaimer of Warranties</h2>
-        <p>The App is provided "as is" and "as available" without any warranties of any kind, either express or implied. We do not guarantee that the App will meet your specific requirements, be uninterrupted, entirely error-free, or compatible with all devices at all times.</p>
-
-        <h2>8. Limitation of Liability</h2>
-        <p>To the fullest extent permitted by law, the developers of Termite Habit Tracker shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of data or profits resulting from the use or inability to use the App.</p>
-
-        <h2>9. Changes to Terms</h2>
-        <p>We reserve the right to modify or replace these Terms of Service at any time. Any revisions will be reflected by the "Last Updated" date at the top of this page. Continued use of the App following any changes constitutes acceptance of the new Terms.</p>
-
-        <h2>10. Contact Us</h2>
-        <div class="contact-info">
-            <p>If you have any questions or require support regarding these Terms of Service, please contact us:</p>
-            <p><strong>Email:</strong> sumitkahar083@gmail.com</p>
-            <p><strong>Phone:</strong> +91 9151382162</p>
+        <div class="highlight-box">
+            <p>Please read these Terms of Service ("Terms") carefully before using <strong>Termite</strong> (also known
+                as <strong>Termite Habit Tracker</strong>, package <code>io.github.termite</code>, "the App"). By
+                downloading, installing, or using the App, you agree to be bound by these Terms.</p>
         </div>
+
+        <h2>1. Description of Service</h2>
+        <p>Termite is an offline-first Android habit tracker designed to help you build and maintain positive routines
+            through daily check-ins, focus timers, heatmaps, reminders, and local backups.</p>
+        <ul>
+            <li><strong>Free Tier:</strong> Track up to 3 active habits, record daily check-ins, use scheduled
+                reminders, run focus timer sessions (Minimal Ring face), configure home screen widgets, and store
+                preferences locally on your device without ads or required user accounts.</li>
+            <li><strong>Paid / Pro Features (Termite PRO):</strong> Unlocks unlimited active habits, Quit habit tracking,
+                Charts &amp; Statistics, Year in Review ("Wrapped") summaries, JSON backup export and restore, custom
+                timer face styles, dashboard card customization, and additional premium features displayed on the
+                in-app upgrade screen.</li>
+        </ul>
+
+        <h2>2. Eligibility &amp; Acceptance</h2>
+        <p>You confirm that you meet the minimum digital consent age in your jurisdiction (at least 13 years old, with
+            parental or guardian consent if under 18) and will use the App in compliance with applicable laws.</p>
+
+        <div class="badge-trader">EU Digital Services Act (DSA) Compliance</div>
+        <h2>3. Trader Status &amp; EU/UK Regulatory Disclosures</h2>
+        <p>In accordance with the <strong>European Union Digital Services Act (Regulation (EU) 2022/2065, "DSA")</strong>
+            (Articles 30 and 31), the EU Consumer Rights Directive (Directive 2011/83/EU), and the <strong>UK Digital
+                Markets, Competition and Consumers Act 2024</strong>:</p>
+
+        <h3>3.1 Trader Declaration</h3>
+        <p><strong>Termite</strong> (<code>io.github.termite</code>) is published, distributed, and operated by
+            <strong>Sumit Kahar</strong>, acting as an individual commercial developer / <strong>Trader</strong> in
+            relation to the App and any paid features, subscriptions, or digital purchases offered through Google Play.
+        </p>
+
+        <h3>3.2 Self-Certification of Compliance (DSA Article 30(1)(e))</h3>
+        <p>The developer self-certifies that Termite and all digital content or services offered through Google Play
+            comply with applicable rules of European Union law and mandatory consumer protection standards.</p>
+
+        <h3>3.3 Contact and Traceability</h3>
+        <p>Full trader identification details (legal name, geographical postal address, telephone number, and support
+            email) are permanently maintained in Section 17 ("Contact Us &amp; Legal Notice / Impressum") of these Terms
+            and displayed on the Google Play Store listing for users in the EEA and the United Kingdom.</p>
+
+        <h2>4. Local Storage, Backups &amp; Privacy</h2>
+        <p>Termite operates offline-first and stores your habit data locally on your device without developer cloud sync
+            servers. You are responsible for safeguarding your device and any manual JSON backup files you export (or
+            enabling Android system backup in your device settings). Data practices, third-party diagnostic SDKs, and
+            your privacy rights are governed by our <a
+                href="https://sumitkahar992.github.io/termite_habit_privacy/">Privacy Policy</a>.</p>
+
+        <h2>5. Purchases, Subscriptions &amp; Consumer Rights</h2>
+
+        <h3>5.1 Plans &amp; Pricing</h3>
+        <p>Termite offers optional Termite PRO upgrades via <strong>Monthly</strong> and <strong>Yearly</strong>
+            auto-renewing subscriptions (which may include an introductory free trial where shown) and a one-time
+            <strong>Lifetime</strong> purchase, managed through RevenueCat and billed via Google Play. Exact pricing,
+            billing cycles, trial durations, and included features are shown in the App and on Google Play's checkout
+            screen before purchase.</p>
+
+        <h3>5.2 Auto-Renewal &amp; Cancellation</h3>
+        <ul>
+            <li>Recurring subscriptions automatically renew via Google Play unless cancelled at least 24 hours before the
+                end of the current billing period or free trial period.</li>
+            <li>Manage or cancel subscriptions anytime in <strong>Google Play Store &gt; Payments &amp; subscriptions
+                    &gt; Subscriptions</strong>.</li>
+            <li>You can restore existing purchases anytime from the Termite PRO upgrade screen using the same Google
+                account.</li>
+        </ul>
+
+        <h3>5.3 Refunds &amp; Google Play Billing</h3>
+        <p>Google Play processes all payments as merchant of record. Refund requests are handled under the <a
+                href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Google Play
+                Refund Policy</a> and mandatory consumer laws.</p>
+
+        <h3>5.4 Statutory Right of Withdrawal (EEA &amp; UK Consumers)</h3>
+        <p>If you reside in the EEA or the United Kingdom, statutory consumer law generally grants a 14-day right of
+            withdrawal, subject to the statutory digital content/services exception under <strong>Art. 16(m) of Directive
+                2011/83/EU</strong> when immediate performance begins with prior express consent. Withdrawals or refunds
+            may be requested through <a href="https://play.google.com/store/account/orderhistory" target="_blank"
+                rel="noopener">Google Play Order History</a> or by contacting <a
+                href="mailto:sumitkahar073@gmail.com">sumitkahar073@gmail.com</a> for verification support.</p>
+
+        <h3>5.5 Legal Guarantee of Conformity</h3>
+        <p>Under Directive (EU) 2019/770 and equivalent UK consumer law (including the Consumer Rights Act 2015 and the
+            Digital Markets, Competition and Consumers Act 2024), consumers benefit from statutory legal guarantees of
+            conformity for digital content and digital services.</p>
+
+        <h2>6. User Content &amp; Acceptable Use</h2>
+        <p>You retain full ownership of all habit data and backups you create in Termite. You agree not to misuse the
+            App, violate applicable laws, circumvent billing or entitlement controls, or reverse-engineer the App except
+            where permitted by mandatory law.</p>
+
+        <h2>7. Intellectual Property</h2>
+        <p>Termite, including its source code, UI design, icons, and branding, belongs to <strong>Sumit Kahar</strong>
+            (excluding third-party open-source components licensed under their respective terms, viewable inside the App).
+            You are granted a limited, non-exclusive, non-transferable, revocable license to use the App for personal,
+            non-commercial purposes.</p>
+
+        <h2>8. Third-Party Services</h2>
+        <p>The App relies on third-party platforms (Google Play Services, Google Play Billing, Google Play In-App Review,
+            RevenueCat, Firebase Crashlytics, and Firebase Analytics; it does <strong>not</strong> use AdMob or
+            third-party advertising) governed by their respective terms and privacy policies.</p>
+
+        <h2>9. Disclaimers</h2>
+        <p>Except to the extent prohibited by mandatory applicable law (including the statutory legal guarantees of
+            conformity in Section 5.5), the App is provided <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong>
+            without express or implied warranties. Termite is a personal productivity tool and does not provide medical,
+            clinical, or therapeutic advice.</p>
+
+        <h2>10. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, the developer is not liable for indirect, incidental, or consequential
+            damages, including loss of locally stored data where no external backup was maintained, and aggregate
+            liability is capped at the amount paid by you for the App in the preceding 12 months. <strong>Nothing in these
+                Terms excludes or limits liability that cannot legally be excluded under mandatory local law.</strong>
+        </p>
+
+        <h2>11. Consumer Dispute Resolution</h2>
+        <p>Please contact us directly at <a href="mailto:sumitkahar073@gmail.com">sumitkahar073@gmail.com</a> to resolve
+            any concern amicably. We are neither obligated nor committed to participate in consumer arbitration
+            proceedings, without prejudice to your mandatory statutory rights.</p>
+
+        <h2>12. Termination</h2>
+        <p>You may stop using and uninstall the App at any time. We may suspend or terminate access for material breach
+            of these Terms or upon discontinuing the App with reasonable prior notice, preserving mandatory statutory
+            consumer refund rights where applicable.</p>
+
+        <h2>13. Changes to These Terms</h2>
+        <p>We may update these Terms periodically by posting changes on this page with a new "Last Updated" date and
+            providing reasonable notice for material changes.</p>
+
+        <h2>14. Governing Law &amp; Jurisdiction</h2>
+        <p>These Terms are governed by the laws of India, without prejudice to mandatory consumer protection laws and
+            competent courts in your country of residence if you reside in the EU, EEA, or United Kingdom.</p>
+
+        <h2>15. Severability</h2>
+        <p>If any provision is held invalid or unenforceable, the remaining provisions continue in full force.</p>
+
+        <h2>16. Interpretation</h2>
+        <p>Headings are for convenience only and do not limit the scope of any section.</p>
+
+        <h2>17. Contact Us &amp; Legal Notice (Impressum)</h2>
+        <p>For customer support, legal notices, or formal trader contact under EU/UK consumer and DSA rules:</p>
+
+        <div class="contact-box">
+            <p><strong>App Name:</strong> Termite (Termite Habit Tracker)</p>
+            <p><strong>Developer / Trader:</strong> Sumit Kahar (Individual Commercial Developer / Trader)</p>
+            <p><strong>Trader Status:</strong> Declared Trader under EU Digital Services Act (Regulation (EU) 2022/2065)</p>
+            <p><strong>Legal Address:</strong> 438, Kaana Paar, Ramnagar, Dhani Bazar, Pharenda, Maharajganj - 273161,
+                India</p>
+            <p><strong>Telephone:</strong> <a href="tel:+919151382162">+91 9151382162</a></p>
+            <p><strong>Support Email:</strong> <a href="mailto:sumitkahar073@gmail.com">sumitkahar073@gmail.com</a></p>
+            <p><strong>Package Name:</strong> io.github.termite</p>
+            <p><strong>Privacy Policy:</strong> <a href="https://sumitkahar992.github.io/termite_habit_privacy/">View
+                    Privacy Policy</a></p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Termite Habit Tracker — Sumit Kahar. All rights reserved.</p>
+        </footer>
     </div>
 </body>
+
 </html>
